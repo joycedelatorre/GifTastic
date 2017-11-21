@@ -30,10 +30,24 @@ $(document).ready(function(){
           characterImage.attr("still", results[i].images.original_still.url);
           characterDiv.append(characterImage); 
           $("#gifList").prepend(characterDiv);
-          $(characterImage).on("click", function(event){
-            $(this).attr("src", $(this).attr("still"));
-            $(this).unbind(event);
-          });
+          // $(characterImage).on("click", function(event){
+          //   $(this).attr("src", $(this).attr("still"));
+          //   $(this).unbind(event);
+          // });
+
+          $(characterImage).mouseover(
+            function()
+            {
+             // var src = $(this).attr("src");
+              $(this).attr("src", $(this).attr("still"));
+            })
+          $(characterImage).mouseout(
+            function()
+            {
+             // var src = $(this).attr("still");
+              $(this).attr("src", $(this).attr("src", results[i].images.fixed_height.url));
+            }
+          )
         }
       }); //end of ajax
     });
@@ -41,3 +55,18 @@ $(document).ready(function(){
 
   addEvent();
 });// end of document
+
+// $(document).ready(function()
+// {
+//     $(".gif").hover(
+//         function()
+//         {
+//           var src = $(this).attr("src");
+//           $(this).attr("src", src.replace(/\.png$/i, ".gif"));
+//         },
+//         function()
+//         {
+//           var src = $(this).attr("src");
+//           $(this).attr("src", src.replace(/\.gif$/i, ".png"));
+//         });
+// });
