@@ -26,32 +26,18 @@ $(document).ready(function(){
           var characterDiv = $("<div>");
           var characterImage = $("<img>");
           characterImage.attr("src", results[i].images.fixed_height.url);
-          // console.log(results[i].images.original_still.url);
+          //console.log(results[i].images);
           characterImage.attr("still", results[i].images.original_still.url);
           characterDiv.append(characterImage); 
           $("#gifList").prepend(characterDiv);
-          $(characterImage).on("click", function(){
+          $(characterImage).on("click", function(event){
             $(this).attr("src", $(this).attr("still"));
+            $(this).unbind(event);
           });
         }
-
       }); //end of ajax
     });
   }// function addEvent();
 
   addEvent();
-  // /playNpause();
-
-  // function playNpause(){
-  //   $(characterDiv).each(function(e){
-  //     console.log(characterDiv);
-  //     // var src = $(e).attr('src');
-  //     // $(e).hover(function(){
-  //     //   $(this).attr('src', src.replace('.gif', '_anim.gif'));
-  //     // }, function(){
-  //     //   $(this).attr('src', src);
-  //     // });
-  //   });
-  // }
- 
 });// end of document
