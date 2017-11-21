@@ -1,0 +1,17 @@
+body{
+	background-image:url("../images/GOTbackground2.png");
+	background-size:cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+.banner{
+	color:black;
+	font-size:70px;
+	text-align: center;
+	font-family: "Trattatello", "Apple Chancery", Serif;
+}
+button{
+	margin-right: 10px;
+	margin-left: 10px;
+}
