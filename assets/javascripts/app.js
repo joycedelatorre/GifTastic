@@ -1,6 +1,5 @@
 $(document).ready(function(){
   //console.log("ready");
-  //event.preventDefault();
 
   $("#submit").on("click", function(event){
     event.preventDefault();
@@ -9,10 +8,8 @@ $(document).ready(function(){
     console.log(input_entry);
     addButton.text(input_entry);
     addButton.attr("data-character", input_entry);
-    // addButton.attr("id", btn);
     $(".btn-List").append(addButton);
     addEvent();
-    //playNpause();
   })
 
   function addEvent(){
@@ -24,32 +21,36 @@ $(document).ready(function(){
         url: queryURL,
         method:"GET"
       }).done(function(response){
-        console.log(queryURL);
-        console.log(response);
         var results = response.data;
         for(var i=0; i<results.length; i++){
           var characterDiv = $("<div>");
           var characterImage = $("<img>");
           characterImage.attr("src", results[i].images.fixed_height.url);
-          characterDiv.append(characterImage);
+          // console.log(results[i].images.original_still.url);
+          characterImage.attr("still", results[i].images.original_still.url);
+          characterDiv.append(characterImage); 
           $("#gifList").prepend(characterDiv);
+          $(characterImage).on("click", function(){
+            $(this).attr("src", $(this).attr("still"));
+          });
         }
-        $("characterDiv").each(function(){})
+
       }); //end of ajax
     });
   }// function addEvent();
 
   addEvent();
-  // playNpause();
+  // /playNpause();
 
   // function playNpause(){
-  //   $("button").each(function(e){
-  //     var src = $(e).attr('src');
-  //     $(e).hover(function(){
-  //       $(this).attr('src', src.replace('.gif', '_anim.gif'));
-  //     }, function(){
-  //       $(this).attr('src', src);
-  //     });
+  //   $(characterDiv).each(function(e){
+  //     console.log(characterDiv);
+  //     // var src = $(e).attr('src');
+  //     // $(e).hover(function(){
+  //     //   $(this).attr('src', src.replace('.gif', '_anim.gif'));
+  //     // }, function(){
+  //     //   $(this).attr('src', src);
+  //     // });
   //   });
   // }
  
