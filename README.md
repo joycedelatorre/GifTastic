@@ -1,2 +1,9 @@
 # GifTastic
-You can add buttons and click those buttons to show Gifs that you can play and pause.
+## This will allow user to manipulate the DOM by using JQuery and javascript.
+
+1. The user will enter their favorite character of GOT.
+2. And when they click on button with the name of character a list of Gifs will be displayed.
+3. The user can play and pause the gifs.
+
+
+![alt text](assets/images/gif "GIPHY")
