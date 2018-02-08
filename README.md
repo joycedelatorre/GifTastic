@@ -7,3 +7,5 @@
 
 
 ![alt text](assets/images/gif "GIPHY")
+
+###Check me out: [GifTastic](https://joycedelatorre.github.io/GifTastic/)
