@@ -6,6 +6,6 @@
 3. The user can play and pause the gifs.
 
 
-![alt text](assets/images/gif "GIPHY")
+![alt text](assets/images/gif.png "GIPHY")
 
 ###Check me out: [GifTastic](https://joycedelatorre.github.io/GifTastic/)
